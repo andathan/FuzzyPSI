@@ -227,7 +227,7 @@ public:
         return row;
     }
 
-    bool row_contains_fingerprint(const std::vector<uint8_t>& ,row uint32_t fp) const {
+    bool row_contains_fingerprint(const std::vector<uint8_t>& row, uint32_t fp) const {
         if (row.size() < bucket_size * sizeof(uint32_t)) {
             return false;
         }
