@@ -79,23 +79,6 @@ Test run without OPRF/PIR:
 ./test --L=5 --k=5 --w=0.5 --server_size=1000 --client_size=1000
 ```
 
-## Staged functionality demo
-
-The small deterministic demo explains and checks the protocol one component at
-a time.
-
-```bash
-make demo
-./fuzzy_pets_demo
-```
-
-
-## Debugging
-To enable debugging messages:
-```
---debug=1
-```
-
 
 
 ## Running the experiments of the paper
@@ -294,6 +277,23 @@ For example to run the results of Section 5.4. use:
 - `pir/checklist/`: ChecklistPIR readers and the two-server Punc/PSetGGM port.
 - `cuckoo_filter.h`, `lsh*.h`: core filter and LSH code.
 - `oprf/droidcrypto/`, `pir/batchpir/vectorized_batchpir/`: third-party dependencies.
+
+## Staged functionality demo
+
+The small deterministic demo explains and checks the protocol one component at
+a time.
+
+```bash
+make demo
+./fuzzy_pets_demo
+```
+
+
+## Debugging
+To enable debugging messages:
+```
+--debug=1
+```
 
 
 ## Protocol Implementation
