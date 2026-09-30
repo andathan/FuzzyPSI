@@ -1,0 +1,2 @@
+client_size;server_size;filter_size;L;k;w;avg_fp;avg_fn;avg_cuckoo_failed;cuckoo_fail_rate;status;log
+1000;50000;100000;1;3;0.05;0;0.002;1601;0.000354987;selected;results/gowalla_min_fp_20260626_171603/calibration/calibration_client_1000_server_50000_full_server_50000_filter_100000.log

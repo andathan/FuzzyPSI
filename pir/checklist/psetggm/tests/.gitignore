@@ -1,0 +1,5 @@
+libpsetggm.a
+test_pset
+test_distinct
+test_xor
+*.dSYM/

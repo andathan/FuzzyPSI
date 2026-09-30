@@ -1,0 +1,6 @@
+cmake-build-*/
+build/
+.idea/
+.vscode/
+build-linux/
+build-mac/
