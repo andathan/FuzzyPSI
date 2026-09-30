@@ -1,0 +1,50 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+repo_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+usage() {
+  cat <<'USAGE'
+Usage:
+  ./table1 [extra ./test args...]
+
+Runs the "Ours" Gowalla configuration from Table 2:
+  |client| = 2^10 = 1,024; 2^13 = 8,192
+  |server| = 1,000,000; 4,500,000; 2^24; 2^26; 2^30
+
+The paper's calibrated 1,000,000 and 4,500,000 values are used as the
+approximations for 2^20 and 2^22. Exact calibrated rows are available for
+2^24 and 2^26. The 8,192-client rows use the nearby paper calibration for
+10,000 clients. The 2^30 rows use the README's documented 1B selection:
+L=3, k=20, w=0.05 with canonical Cuckoo auto-sizing.
+
+The experiment uses BatchPIR with an initial batch size of 1,000, GCAES OPRF,
+five repetitions, and the paper's <3% FPP / <1% FNP parameter choices. Start
+the GCAES OPRF server separately on OPRF_ADDR (default 127.0.0.1:50051).
+
+Any arguments are forwarded to ./test by run_cuckoo_server_sweep.sh.
+USAGE
+}
+
+if [[ $# -gt 0 ]]; then
+  case "$1" in
+    -h|--help|help)
+      usage
+      exit 0
+      ;;
+  esac
+fi
+
+cd "${repo_dir}"
+
+
+SERVER_SIZES="1000000 4500000 16777216 67108864" \
+CLIENT_SIZES="1024 8192" \
+PARAM_TABLE="datasets/calibrations/table2_gowalla_params.csv" \
+SMALL_DB_PRESET="gowalla" \
+BIG_DB_PRESET="gowalla_plus_augmented_generated_client" \
+PIR_MODE="BatchPIR" \
+PIR_BATCHPIR_BATCH_SIZE="1000" \
+PIR_BATCHPIR_FALLBACK_SIZES="500 200 100 64 32 16 8" \
+NUM_RUNS="5" \
+./run_cuckoo_server_sweep.sh --target-fp 0.03 "$@"
