@@ -103,7 +103,7 @@ Then on another terminal:
 ```
 ./run_cuckoo_server_sweep.sh -target-fp min_fp
 ```
-## 1%/3%/5% FP at 1% FN (Figure 6, 7, 8 and Table 2)
+## 1%/3%/5% FP at 1% FN (Figure 6, 7, 8 and Table 1)
 
 ```
 ./run_cuckoo_server_sweep.sh -target-fp 0.01
@@ -118,10 +118,10 @@ Exp_name follows the format [db] [target_fp] [datetime]
 
 ## Table2 (comparison with other works)
 
-The following script conveniently runs all instances in Table 2:
+The following script conveniently runs all instances apart from 1B (see below) for Table 1:
 
 ```
-./table2
+./table1
 ```
 
 ## Scale to 1B
@@ -173,7 +173,7 @@ The following script conveniently runs all instances in Table 2:
 ./test --PIR_checklist --OPRF --oprf_mechanism=GCAES --oprf_addr=127.0.0.1:50051 --num_runs=5 --db=default_plus_augmented_generated_client --server_size=1073741824 --client_size=8192 --L=3 --k=20 --w=0.05 > results/scale_2_30_client_2_13_checklistpir.log
 ```
 
-## Machine learning Experiment
+## Machine learning Experiment (Figure 9)
 ```
 ./run_cuckoo_client_sweep.sh db=MNIST 
 ./run_cuckoo_client_sweep.sh db=FashionMNIST
