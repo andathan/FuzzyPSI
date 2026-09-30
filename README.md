@@ -239,13 +239,11 @@ For example to run the results of Section 5.4. use:
 
 
 ## Third-Party Libraries
-
 This project uses code from the following third-party libraries:
-  - a C++ re-implementation of (**ChecklistPIR**)[https://github.com/dimakogan/checklist], reusing parts of the original code base  
-  - the OPRF implementation from (**mobile_psi_cpp**)[https://github.com/contact-discovery/mobile_psi_cpp]
-  - (**BatchPIR**)[https://github.com/mhmughees/vectorized_batchpir]
-  - (**Microsoft SEAL**)[https://github.com/microsoft/SEAL]
-
+- the OPRF implementation from [**mobile_psi_cpp**](https://github.com/contact-discovery/mobile_psi_cpp)
+- [**BatchPIR**](https://github.com/mhmughees/vectorized_batchpir)
+- [**ChecklistPIR**](https://github.com/dimakogan/checklist)
+- [**Microsoft SEAL**](https://github.com/microsoft/SEAL)
 
 ### Disclaimer 
 This repository is research code. Not for usage in production. 
