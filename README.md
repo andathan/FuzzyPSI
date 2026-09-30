@@ -1,5 +1,3 @@
-This branch includes our code for the VLDB submission. 
-
 # Fuzzy PETS
 
 Implementation of our Fuzzy PSI protocol using Cuckoo Filters, GCAES, E2LSH and BatchPIR/ChecklistPIR. 
