@@ -1,7 +1,7 @@
-# Fuzzy PETS
+# FuzzyPSI
 
-Implementation of our Fuzzy PSI protocol using Cuckoo Filters, GCAES, E2LSH and BatchPIR/ChecklistPIR. 
-The active experiment is `./test`; the main function is in `test_fuzzypsi.cpp`.
+This repository contains the code for our paper _Fuzzy Private Set Intersection with Large Databases via Locality-Sensitive Hashing_
+
 
 # Installation
 
