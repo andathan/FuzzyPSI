@@ -8,7 +8,7 @@ The active experiment is `./test`; the main function is in `test_fuzzypsi.cpp`.
 ## Build the main binary and the SEAL library:
 ```
 git clone https://github.com/andathan/FuzzyPSI.git
-cd fuzzy_pets
+cd FuzzyPSI
 python3 -m venv venv  
 source venv/bin/activate 
 sudo apt update 
