@@ -116,7 +116,7 @@ Besides stdout, results are also written in results/[exp_name]/summary_.csv
 Exp_name follows the format [db] [target_fp] [datetime]
 
 
-## Table2 (comparison with other works)
+## Table 1 (comparison with other works)
 
 The following script conveniently runs all instances apart from 1B (see below) for Table 1:
 
